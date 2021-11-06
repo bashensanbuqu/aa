@@ -1,69 +1,12 @@
 #!/bin/sh
-#微软云多IP配置ss5
-#适用于微软云CentOS7.9-Gen2,其他版本自行测试
+
 if [ $(whoami) != "root" ];then
 	echo "请使用root权限运行此一键安装命令！"
         echo "切换到root用户：sudo su root"
 	exit 1;
 fi
 
-cd /etc/sysconfig/network-scripts
 
-echo 'DEVICE=eth0:0
-BOOTPROTO=static
-ONBOOT=yes
-IPADDR=10.0.0.11
-NETMASK=255.255.255.0' >ifcfg-eth0:0
-
-echo 'DEVICE=eth0:1
-BOOTPROTO=static
-ONBOOT=yes
-IPADDR=10.0.0.12
-NETMASK=255.255.255.0' >ifcfg-eth0:1
-
-echo 'DEVICE=eth0:2
-BOOTPROTO=static
-ONBOOT=yes
-IPADDR=10.0.0.13
-NETMASK=255.255.255.0' >ifcfg-eth0:2
-
-echo 'DEVICE=eth0:3
-BOOTPROTO=static
-ONBOOT=yes
-IPADDR=10.0.0.14
-NETMASK=255.255.255.0' >ifcfg-eth0:3
-
-echo 'DEVICE=eth0:4
-BOOTPROTO=static
-ONBOOT=yes
-IPADDR=10.0.0.15
-NETMASK=255.255.255.0' >ifcfg-eth0:4
-
-echo 'DEVICE=eth0:5
-BOOTPROTO=static
-ONBOOT=yes
-IPADDR=10.0.0.16
-NETMASK=255.255.255.0' >ifcfg-eth0:5
-
-echo 'DEVICE=eth0:6
-BOOTPROTO=static
-ONBOOT=yes
-IPADDR=10.0.0.17
-NETMASK=255.255.255.0' >ifcfg-eth0:6
-
-echo 'DEVICE=eth0:7
-BOOTPROTO=static
-ONBOOT=yes
-IPADDR=10.0.0.18
-NETMASK=255.255.255.0' >ifcfg-eth0:7
-
-echo 'DEVICE=eth0:8
-BOOTPROTO=static
-ONBOOT=yes
-IPADDR=10.0.0.19
-NETMASK=255.255.255.0' >ifcfg-eth0:8
-
-/etc/init.d/network restart
 
 ifconfig
 
