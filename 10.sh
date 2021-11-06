@@ -8,6 +8,7 @@ fi
 
 
 
+service ss5 restart
 ifconfig
 
 cd /etc/init.d
