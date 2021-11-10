@@ -1,4 +1,6 @@
 #!/bin/sh
+#chkconfig: 2345 81 96
+#description:yyds
 
 sleep 5
 killall -9 ss5
