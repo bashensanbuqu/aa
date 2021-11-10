@@ -1,6 +1,5 @@
 #!/bin/sh
-#微软云多IP配置ss5
-#适用于微软云CentOS7.9-Gen2,其他版本自行测试
+
 if [ $(whoami) != "root" ];then
 	echo "请使用root权限运行此一键安装命令！"
         echo "切换到root用户：sudo su root"
