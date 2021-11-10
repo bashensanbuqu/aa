@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sleep 10
+sleep 5
 killall -9 ss5
 iptables -F
 
