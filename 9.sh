@@ -45,7 +45,7 @@ ss5 -u yyds1010 -t -m -b 10.0.0.19:11222
 ps -ef | grep ss5' >yyds
 
 chmod +x /etc/init.d/yyds
-chkconfig --add ss5
+chkconfig --add yyds
 chkconfig --level 346 yyds on
 
 
