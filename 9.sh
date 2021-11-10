@@ -55,7 +55,7 @@ do
 done
 
 cat /etc/passwd
-
+iptables -F
 iptables -t mangle -F OUTPUT
 for ((i=1, j=1001; i <= 10 ; i++, j=j+1))
 do
