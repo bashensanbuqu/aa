@@ -5,7 +5,7 @@ if [ $(whoami) != "root" ];then
         echo "切换到root用户：sudo su root"
 	exit 1;
 fi
-
+sleep 5
 killall -9 ss5
 ip addr add 10.0.0.11/24 dev eth0 label eth0:0
 ip addr add 10.0.0.12/24 dev eth0 label eth0:1
@@ -21,6 +21,7 @@ cd /etc/init.d
 echo '#!/bin/sh
 #chkconfig: 2345 80 90
 #description:yyds
+sleep 5
 killall -9 ss5
 ip addr add 10.0.0.11/24 dev eth0 label eth0:0
 ip addr add 10.0.0.12/24 dev eth0 label eth0:1
