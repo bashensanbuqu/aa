@@ -21,7 +21,7 @@ cd /etc/init.d
 echo '#!/bin/sh
 #chkconfig: 2345 80 90
 #description:yyds
-
+sleep 5
 killall -9 ss5
 ip addr add 10.0.0.11/24 dev eth0 label eth0:0
 ip addr add 10.0.0.12/24 dev eth0 label eth0:1
@@ -46,6 +46,7 @@ ss5 -u yyds1010 -t -m -b 10.0.0.19:11222
 ps -ef | grep ss5' >yyds
 
 chmod +x /etc/init.d/yyds
+chkconfig --add ss5
 chkconfig --add yyds
 chkconfig --level 346 yyds on
 
