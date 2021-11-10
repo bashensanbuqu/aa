@@ -1,5 +1,5 @@
 #!/bin/sh
-#chkconfig: 2345 81 96
+#chkconfig: 2345 80 90
 #description:yyds
 
 sleep 5
