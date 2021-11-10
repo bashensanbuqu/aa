@@ -1,6 +1,5 @@
 #!/bin/sh
-#chkconfig: 2345 80 90
-#description:yyds
+
 
 sleep 5
 killall -9 ss5
