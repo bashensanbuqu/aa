@@ -1,16 +1,16 @@
 #!/bin/sh
 
 
-killall -9 ss5
-ip addr add 10.0.0.11/24 dev eth0 label eth0:0
-ip addr add 10.0.0.12/24 dev eth0 label eth0:1
-ip addr add 10.0.0.13/24 dev eth0 label eth0:2
-ip addr add 10.0.0.14/24 dev eth0 label eth0:3
-ip addr add 10.0.0.15/24 dev eth0 label eth0:4
-ip addr add 10.0.0.16/24 dev eth0 label eth0:5
-ip addr add 10.0.0.17/24 dev eth0 label eth0:6
-ip addr add 10.0.0.18/24 dev eth0 label eth0:7
-ip addr add 10.0.0.19/24 dev eth0 label eth0:8
+#killall -9 ss5
+#ip addr add 10.0.0.11/24 dev eth0 label eth0:0
+#ip addr add 10.0.0.12/24 dev eth0 label eth0:1
+#ip addr add 10.0.0.13/24 dev eth0 label eth0:2
+#ip addr add 10.0.0.14/24 dev eth0 label eth0:3
+#ip addr add 10.0.0.15/24 dev eth0 label eth0:4
+#ip addr add 10.0.0.16/24 dev eth0 label eth0:5
+#ip addr add 10.0.0.17/24 dev eth0 label eth0:6
+#ip addr add 10.0.0.18/24 dev eth0 label eth0:7
+#ip addr add 10.0.0.19/24 dev eth0 label eth0:8
 #ip addr show
 
 for ((i=1, j=1001; i <= 10 ; i++, j=j+1))
