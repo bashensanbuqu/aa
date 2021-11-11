@@ -1,10 +1,17 @@
 #!/bin/sh
-#chkconfig: 2345 80 90
-#description:yyds
 
-sleep 5
+
 killall -9 ss5
-iptables -F
+ip addr add 10.0.0.11/24 dev eth0 label eth0:0
+ip addr add 10.0.0.12/24 dev eth0 label eth0:1
+ip addr add 10.0.0.13/24 dev eth0 label eth0:2
+ip addr add 10.0.0.14/24 dev eth0 label eth0:3
+ip addr add 10.0.0.15/24 dev eth0 label eth0:4
+ip addr add 10.0.0.16/24 dev eth0 label eth0:5
+ip addr add 10.0.0.17/24 dev eth0 label eth0:6
+ip addr add 10.0.0.18/24 dev eth0 label eth0:7
+ip addr add 10.0.0.19/24 dev eth0 label eth0:8
+#ip addr show
 
 for ((i=1, j=1001; i <= 10 ; i++, j=j+1))
 do
@@ -41,17 +48,6 @@ sed -i '1a\permit u         0.0.0.0/0       -       0.0.0.0/0       -       -   
 iptables -I INPUT 1 -m state --state NEW -m tcp -p tcp --dport 11222 -j ACCEPT
 iptables -I INPUT 1 -m state --state NEW -m udp -p udp --dport 11222 -j ACCEPT
 
-
-ip addr add 10.0.0.11/24 dev eth0 label eth0:0
-ip addr add 10.0.0.12/24 dev eth0 label eth0:1
-ip addr add 10.0.0.13/24 dev eth0 label eth0:2
-ip addr add 10.0.0.14/24 dev eth0 label eth0:3
-ip addr add 10.0.0.15/24 dev eth0 label eth0:4
-ip addr add 10.0.0.16/24 dev eth0 label eth0:5
-ip addr add 10.0.0.17/24 dev eth0 label eth0:6
-ip addr add 10.0.0.18/24 dev eth0 label eth0:7
-ip addr add 10.0.0.19/24 dev eth0 label eth0:8
-#ip addr show
 
 ss5 -u yyds1001 -t -m -b 10.0.0.4:11222
 ss5 -u yyds1002 -t -m -b 10.0.0.11:11222
