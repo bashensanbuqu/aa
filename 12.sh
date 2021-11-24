@@ -29,7 +29,7 @@ done
 iptables -nvL -t mangle
 
 iptables -t nat -F POSTROUTING
-#iptables -t nat -A POSTROUTING -m mark --mark 1001 -j SNAT --to 10.0.0.4
+iptables -t nat -A POSTROUTING -m mark --mark 1001 -j SNAT --to 10.0.0.4
 iptables -t nat -A POSTROUTING -m mark --mark 1002 -j SNAT --to 10.0.0.11
 iptables -t nat -A POSTROUTING -m mark --mark 1003 -j SNAT --to 10.0.0.12
 iptables -t nat -A POSTROUTING -m mark --mark 1004 -j SNAT --to 10.0.0.13
@@ -49,7 +49,7 @@ iptables -I INPUT 1 -m state --state NEW -m tcp -p tcp --dport 11222 -j ACCEPT
 iptables -I INPUT 1 -m state --state NEW -m udp -p udp --dport 11222 -j ACCEPT
 
 
-#ss5 -u yyds1001 -t -m -b 10.0.0.4:11222
+ss5 -u yyds1001 -t -m -b 10.0.0.4:11222
 ss5 -u yyds1002 -t -m -b 10.0.0.11:11222
 ss5 -u yyds1003 -t -m -b 10.0.0.12:11222
 ss5 -u yyds1004 -t -m -b 10.0.0.13:11222
