@@ -1,7 +1,7 @@
 #!/bin/sh
 
 
-#killall -9 ss5
+killall -9 ss5
 #ip addr add 10.0.0.11/24 dev eth0 label eth0:0
 #ip addr add 10.0.0.12/24 dev eth0 label eth0:1
 #ip addr add 10.0.0.13/24 dev eth0 label eth0:2
@@ -18,7 +18,7 @@ do
         /usr/sbin/useradd yyds$j -u $j -M -s /dev/null
 done
 
-systemctl cat /etc/passwd
+cat /etc/passwd
 
 iptables -t mangle -F OUTPUT
 for ((i=1, j=1001; i <= 10 ; i++, j=j+1))
